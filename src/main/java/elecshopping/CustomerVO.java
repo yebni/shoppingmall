@@ -1,5 +1,5 @@
 package elecshopping;
 
-public class UserVO {
+public class CustomerVO {
 
 }
