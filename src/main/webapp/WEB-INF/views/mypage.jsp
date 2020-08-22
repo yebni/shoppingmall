@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>{$myinfo.name} HI!</title>
+<title>HI</title>
 </head>
 <body>
-
+<div>
+	<h1>HI ${myinfo.name} !</h1>
+</div>
 </body>
 </html>
