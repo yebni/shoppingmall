@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class MypageController {
 	
+	
 	@Autowired
 	MypageDAO dao;
 	
