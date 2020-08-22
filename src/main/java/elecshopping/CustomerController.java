@@ -12,7 +12,7 @@ public class CustomerController {
 	@Autowired
 	CustomerDAO dao;
 
-	@RequestMapping("/customerlist")
+	@RequestMapping("/customer/list")
 	public ModelAndView getCustomerList() {
 		ArrayList<CustomerVO> customerlist = dao.getCustomerList();
 		ModelAndView mv = new ModelAndView();
@@ -21,7 +21,7 @@ public class CustomerController {
 		return mv;
 	} // getCustomerList end
 
-	@RequestMapping("/customerdetail")
+	@RequestMapping("/customer/detail")
 	public ModelAndView getCustomer(String id) {
 		CustomerVO vo = dao.getCustomer(id);
 		ModelAndView mv = new ModelAndView();
@@ -30,7 +30,7 @@ public class CustomerController {
 		return mv;
 	}
 	
-	@RequestMapping("/customerdelete")
+	@RequestMapping("/customer/delete")
 	public String deleteCustomer(String id, int admin) {
 		if(admin != 9) {	// 관리자는 삭제 불가
 			dao.deleteCustomer(id);
