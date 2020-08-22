@@ -13,11 +13,12 @@ public class MypageController {
 	
 	@RequestMapping("/mypage")
 	public ModelAndView Mypage() {
-		ArrayList<MypageVO> myinfo = dao.getInfo();
+		MypageVO myinfo = dao.getInfo();
 
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("myinfo", myinfo);
 		mv.setViewName("mypage");
+		return mv;
 	}
 	
 
