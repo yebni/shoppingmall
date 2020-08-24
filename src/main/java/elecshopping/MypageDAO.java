@@ -42,6 +42,12 @@ public class MypageDAO {
 		
 	}
 	
+	ArrayList<CartVO> getCart() {
+		ArrayList<CartVO> vo = new ArrayList<CartVO>();
+		
+		return vo;
+	}
+	
 	
 
 }
