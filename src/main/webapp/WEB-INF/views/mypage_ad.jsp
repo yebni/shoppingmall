@@ -9,7 +9,8 @@
 	content="width=device-width, initial-sacle=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>${myinfo.name }의 Mypage</title>
+
+<title>mypage for admin</title>
 <script src="/shop/resources/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap core CSS -->
 <link href="/shop/resources/vendor/bootstrap/css/bootstrap.min.css"
@@ -17,9 +18,14 @@
 
 <!-- Custom styles for this template -->
 <link href="/shop/resources/css/shop-homepage.css" rel="stylesheet">
-
+<style>
+#mode {
+	align-content: center;
+}
+</style>
 </head>
 <body>
+
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
@@ -34,44 +40,31 @@
 					<li class="nav-item active"><a class="nav-link" href="/shop/">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link" href="/shop/login">Login</a></li>
-					<li class="nav-item"><a class="nav-link" href="/shop/mypage">My page</a></li>
-					<li class="nav-item"><a class="nav-link" href="/signup">SignUp</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/shop/customerlist">My page</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-<div>
-	<h1>내 정보</h1>
-	<table>
-		<tr>
-			<td>이름</td>
-			<td>${myinfo.name }</td>
-			
-		</tr>
-		<tr>
-			<td>아이디</td>
-			<td>${myinfo.id}</td>
-		</tr>
-		<tr>
-			<td>전화번호</td>
-			<td>${myinfo.phone }</td>
-		
-		</tr>
-		<tr>
-			
-			<td></td>
-		</tr>
-	</table>
-	<a href="mypageedit">내 정보 수정하기</a>
-	<a href="cart">내 장바구니</a>
-	
-	
-</div>
+
+
+	<!-- Page Content -->
+	<div class="container" id="mode">
+		<div class="row">
+			<div class="my-4">
+				<a href="/shop/customerlist">회원 관리 모드</a>
+				<hr>
+				<a href="/shop/customerlist">상품 관리 모드</a>
+			</div>
+		</div>
+	</div>
+
 	<!-- Footer -->
 	<footer class="py-5 bg-dark">
 		<div class="container">
-			<p class="m-0 text-center text-white">Copyright &copy; Multi Campus 2020</p>
+			<p class="m-0 text-center text-white">Copyright &copy; Multi
+				Campus 2020</p>
 		</div>
 		<!-- /.container -->
 	</footer>

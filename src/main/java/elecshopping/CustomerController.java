@@ -32,9 +32,19 @@ public class CustomerController {
 	
 	@RequestMapping("/customerdelete")
 	public String deleteCustomer(String id, int admin) {
-		if(admin != 9) {	// 관리자는 삭제 불가
+		if(admin == 9) {	// 관리자는 삭제 불가
 			dao.deleteCustomer(id);
 		}
 		return "redirect:/customerlist";
 	} // deleteCustomer end
+	
+	@RequestMapping("/")
+	public String index() {
+		return "index";
+	}
+	
+//	@RequestMapping("/mypage")
+//	public String mypage() {
+//		return "mypage";
+//	}
 }

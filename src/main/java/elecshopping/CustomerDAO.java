@@ -22,7 +22,7 @@ public class CustomerDAO {
 			PreparedStatement pt = con.prepareStatement(sql);
 
 			ResultSet rs = pt.executeQuery();
-
+			
 			while(rs.next()) {
 				CustomerVO vo = new CustomerVO();
 				vo.setId(rs.getString("id"));
