@@ -8,19 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class MypageController {
+public class IndexController {
 	
 	
 	@Autowired
 	MypageDAO dao;
 	
-	@RequestMapping("/mypage")
-	public ModelAndView Mypage(String id) {
-		MypageVO myinfo = dao.getInfo(id);
+	@RequestMapping("/index.do")
+	public ModelAndView Index(String id) {
 
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("myinfo", myinfo);
-		mv.setViewName("mypage");
+		mv.setViewName("index");
 		return mv;
 	}
 	
