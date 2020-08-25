@@ -2,6 +2,8 @@ package elecshopping;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +17,8 @@ public class MypageController {
 	MypageDAO dao;
 	
 	@RequestMapping("/mypage")
-	public ModelAndView Mypage(String id) {
-		MypageVO myinfo = dao.getInfo(id);
+	public ModelAndView Mypage(HttpSession session) {
+		MypageVO myinfo = dao.getInfo(session);
 
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("myinfo", myinfo);

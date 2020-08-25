@@ -6,14 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Component;
 
 @Component("mypagedao")
 public class MypageDAO {
 	
-	MypageVO getInfo(String id) {
+	MypageVO getInfo(HttpSession session) {
 		MypageVO vo  = new MypageVO();
-//		vo.setName("jimin");
+		String id = (String) session.getAttribute("id");
 		
 		try { 
 			String sql = "select * from member where id=?";

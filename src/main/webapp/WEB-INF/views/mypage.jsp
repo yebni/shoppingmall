@@ -25,11 +25,11 @@
 		
 		</tr>
 		<tr>
-			<td>비밀번호</td>
+			<td>내 정보 수정하기</td>
 			<td></td>
 		</tr>
 	</table>
-	<h1>내 장바구니</h1>
+	<a href="cart">내 장바구니</a>
 	
 	
 </div>
