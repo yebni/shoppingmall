@@ -4,9 +4,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>${myinfo.name }의 Mypage</title>
 </head>
 <body>
-
+<div>
+	<h1>내 정보</h1>
+	<table>
+		<tr>
+			<td>이름</td>
+			<td>${myinfo.name }</td>
+			
+		</tr>
+		<tr>
+			<td>아이디</td>
+			<td>${myinfo.id}</td>
+		</tr>
+		<tr>
+			<td>전화번호</td>
+			<td>${myinfo.phone }</td>
+		
+		</tr>
+		<tr>
+			
+			<td></td>
+		</tr>
+	</table>
+	<a href="mypageedit">내 정보 수정하기</a>
+	<a href="cart">내 장바구니</a>
+	
+	
+</div>
 </body>
 </html>
