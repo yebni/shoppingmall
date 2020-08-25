@@ -92,7 +92,7 @@ public class MemberDAO {
 		MemberVO member = null;
 
 		
-		String sql = "select * from member where (id=? and pw=?)";
+		String sql = "select * from member where id=?";
 
 		try { 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -118,6 +118,8 @@ public class MemberDAO {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println("체");
+		System.out.println(member);
 		if(member != null)
 			return "1";
 		else

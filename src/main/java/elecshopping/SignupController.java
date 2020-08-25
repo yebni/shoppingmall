@@ -48,7 +48,6 @@ public class SignupController {
 		
 		String memberid = request.getParameter("memberid");
 		return memberDAO.idCheck(memberid);
-		return Integer.toString(0);
 	}
 	
 	
