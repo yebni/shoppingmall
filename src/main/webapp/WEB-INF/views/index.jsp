@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> ${name } 님!</h1>
+<h1> index page</h1>
 
 </body>
 </html>
