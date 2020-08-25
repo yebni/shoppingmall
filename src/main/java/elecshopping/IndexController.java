@@ -14,7 +14,7 @@ public class IndexController {
 	@Autowired
 	MypageDAO dao;
 	
-	@RequestMapping("/index.do")
+	@RequestMapping("/")
 	public ModelAndView Index(String id) {
 
 		ModelAndView mv = new ModelAndView();

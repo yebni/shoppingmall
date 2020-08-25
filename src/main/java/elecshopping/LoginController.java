@@ -27,7 +27,7 @@ public class LoginController {
 	
 
 		System.out.println(memberDAO.getMember(vo));
-		if(memberDAO.getMember(vo) != null) return "redirect:/index.do";
+		if(memberDAO.getMember(vo) != null) return "redirect:/";
 		else return "login";
 	}
 	
