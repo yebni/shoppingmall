@@ -26,5 +26,25 @@ public class MypageController {
 		return mv;
 	}
 	
+	@RequestMapping("/mypageedit")
+	public ModelAndView MypageEdit(HttpSession session) {
+		MypageVO myinfo = dao.getInfo(session);
+
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("myinfo", myinfo);
+		mv.setViewName("mypageedit");
+		return mv;
+	}
+	
+	@RequestMapping("/infoEdit.do")
+	public ModelAndView infoEdit(HttpSession session) {
+		MypageVO myinfo = dao.getInfo(session);
+
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("myinfo", myinfo);
+		mv.setViewName("mypageedit");
+		return mv;
+	}
+	
 
 }

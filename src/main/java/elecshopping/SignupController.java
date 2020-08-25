@@ -44,9 +44,10 @@ public class SignupController {
 	//produces는 ajax가 데이터 넘겨받을때 깨짐 방지
 	@RequestMapping(value = "/idCheck.do",method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
-	public String idCheck(HttpServletRequest request) {
+	public String idCheck(MemberVO vo, MemberDAO memberDAO, HttpServletRequest request) {
 		
-		String userId = request.getParameter("userId");
+		String memberid = request.getParameter("memberid");
+		return memberDAO.idCheck(memberid);
 		return Integer.toString(0);
 	}
 	

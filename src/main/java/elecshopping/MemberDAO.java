@@ -87,5 +87,41 @@ public class MemberDAO {
 		return member;
 		
 	}
+
+	public String idCheck(String memberid) {
+		MemberVO member = null;
+
+		
+		String sql = "select * from member where (id=? and pw=?)";
+
+		try { 
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection
+					("jdbc:oracle:thin:@localhost:1521:xe", "hr", "hr");
+			PreparedStatement pt = con.prepareStatement(sql);
+
+			pt.setString(1, memberid);
+
+
+
+
+			ResultSet rs = pt.executeQuery();
+			
+
+			while(rs.next()) {
+				
+				member = new MemberVO();
+				member.setMemberid(rs.getString("ID"));
+			}
+			pt.close();
+			con.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		if(member != null)
+			return "1";
+		else
+			return "0";
+	}
 	
 }

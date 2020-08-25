@@ -25,10 +25,11 @@
 		
 		</tr>
 		<tr>
-			<td>내 정보 수정하기</td>
+			
 			<td></td>
 		</tr>
 	</table>
+	<a href="mypageedit">내 정보 수정하기</a>
 	<a href="cart">내 장바구니</a>
 	
 	
