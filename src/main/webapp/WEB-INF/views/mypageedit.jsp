@@ -14,7 +14,9 @@
 		<table>
 			<tbody>
 				<tr>
-					<td>아이디 ${myinfo.id }</td>
+					<td>아이디</td>
+				
+					<td>${myinfo.id }</td>
 				</tr>
 				<tr>
 					<td colspan=3 id="idCheck"></td>
