@@ -1,6 +1,7 @@
 package elecshopping;
 
 public class MemberVO {
+
 	String memberid;
 	String password;
 	String name;
@@ -8,6 +9,7 @@ public class MemberVO {
 	String phone;
 	String address;
 	String gender;
+
 	public String getMemberid() {
 		return memberid;
 	}
@@ -15,7 +17,7 @@ public class MemberVO {
 		this.memberid = memberid;
 	}
 	public String getPassword() {
-		return name;
+		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
@@ -32,12 +34,8 @@ public class MemberVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+
+
 	public String getAddress() {
 		return address;
 	}
@@ -50,6 +48,12 @@ public class MemberVO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
-	
-}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	   
+	   
+	}

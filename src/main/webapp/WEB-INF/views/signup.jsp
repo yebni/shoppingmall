@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport"
 	content="width=device-width, initial-sacle=1, shrink-to-fit=no">
 <meta name="description" content="">
@@ -41,6 +42,7 @@
 			</div>
 		</div>
 	</nav>
+
 	<h1>회원가입</h1>
 	<hr>
 	<form id="signFrm" name="signFrm" action="signUp.do">
@@ -48,7 +50,8 @@
 			<tbody>
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" id="memberid" name="memberid"></td>
+
+					<td><input type="text" id="memberid" name="memberid" ></td>
 					<td><input type="button" id="check" value="중복체크"></td>
 				</tr>
 				<tr>
@@ -56,24 +59,24 @@
 				</tr>
 				<tr>
 					<td>패스워드</td>
-					<td colspan="2"><input id="password" name="password"
-						type="password"></td>
+
+					<td colspan="2"><input id="password" name="password" type="password"></td>
 				</tr>
 				<tr>
 					<td>패스워드 확인</td>
-					<td colspan="2"><input id="passwordCheck" name="passwordCheck"
-						type="password"></td>
+					<td colspan="2"><input id="passwordCheck" name="passwordCheck" type="password"></td>
 				</tr>
-
+				
 				<tr>
 					<td>이름</td>
-					<td><input type="text" id="name" name="name"></td>
+					<td><input type="text" id="name" name="name" ></td>
 				</tr>
-
+				
 				<tr>
-					<td>전화번호</td>
-					<td><input type="text" id="phone" name="phone"></td>
+					<td>전화번호 </td>
+					<td><input type="text" id="phone" name="phone" ></td>
 				</tr>
+				
 
 				<tr>
 					<td colspan="3"><input type="button" id="signUp" value="회원가입"></td>
@@ -81,6 +84,7 @@
 			</tbody>
 		</table>
 	</form>
+
 	<!-- Footer -->
 	<footer class="py-5 bg-dark">
 		<div class="container">
@@ -97,55 +101,64 @@
 </body>
 
 <script type="text/javascript">
-	$(document).ready(function(e) {
+	$(document).ready(function(e){
+		
 		var idx = false;
-		$('#signUp').click(function() {
-			if ($.trim($('#memberid').val()) == '') {
+		
+		$('#signUp').click(function(){
+			if($.trim($('#memberid').val()) == ''){
 				alert("아이디 입력.");
 				$('#memberid').focus();
 				return;
-			} else if ($.trim($('#password').val()) == '') {
-					alert("패스워드 입력.");
-					$('#password').focus();
-					return;
+			}else if($.trim($('#password').val()) == ''){
+				alert("패스워드 입력.");
+				$('#password').focus();
+				return;
 			}
 			//패스워드 확인
-			else if ($('#password').val() != $('#passwordCheck').val()) {
-					alert('패스워드가 다릅니다.');
-					$('#password').focus();
-					return;
+			else if($('#password').val() != $('#passwordCheck').val()){
+				alert('패스워드가 다릅니다.');
+				$('#password').focus();
+				return;
 			}
-			if (idx == false) {
+			
+			if(idx==false){
 				alert("아이디 중복체크를 해주세요.");
 				return;
-			} else {
+			}else{
 				$('#signFrm').submit();
 			}
 		});
-
-		$('#check').click(function() {
+		
+		$('#check').click(function(){
 			$.ajax({
-				url : "${pageContext.request.contextPath}/idCheck.do",
-				type : "GET",
-				data : {"memberid" : $('#memberid').val()},
-				success : function(data) {
-							if (data == 0&& $.trim($('#memberid').val()) != '') {
-								idx = true;
-								$('#userId').attr("readonly",true);
-								var html = "<tr><td colspan='3' style='color: green'>사용가능</td></tr>";
-								$('#idCheck').empty();
-								$('#idCheck').append(html);
-							} else {
-								var html = "<tr><td colspan='3' style='color: red'>사용불가능한 아이디 입니다.</td></tr>";
-								$('#idCheck').empty();
-								$('#idCheck').append(html);
-							}
-						},
-				error : function() {alert("서버에러");}
-				});
+				url: "${pageContext.request.contextPath}/idCheck.do",
+				type: "GET",
+				data:{
+					"memberid":$('#memberid').val()
+				},
+				success: function(data){
+					if(data == 0 && $.trim($('#memberid').val()) != '' ){
+						idx=true;
+						$('#userId').attr("readonly",true);
+						var html="<tr><td colspan='3' style='color: green'>사용가능</td></tr>";
+						$('#idCheck').empty();
+						$('#idCheck').append(html);
+					}else{
 
+						var html="<tr><td colspan='3' style='color: red'>사용불가능한 아이디 입니다.</td></tr>";
+						$('#idCheck').empty();
+						$('#idCheck').append(html);
+					}
+				},
+				error: function(){
+					alert("서버에러");
+				}
 			});
+			
 
+		});
+		
 	});
 </script>
 </html>
