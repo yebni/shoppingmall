@@ -6,12 +6,22 @@
 ### 테이블 명령어
 
 CREATE TABLE member(
+
     id VARCHAR(20) NOT NULL,
+
     pw VARCHAR(20) NOT NULL,
+
     name VARCHAR(20) NOT NULL,
+
     phone VARCHAR(20),
+
     admin NUMBER NOT NULL
+
   );
+
+  ### jquery 위치 변경
+
+webapp/resources/jquery-3.2.1.min.js
 
 
   ### pom.xml
@@ -45,4 +55,3 @@ CREATE TABLE member(
 			<version>1.3.0</version>
 		</dependency>
 
-        
