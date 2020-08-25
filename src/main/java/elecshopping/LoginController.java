@@ -29,7 +29,7 @@ public class LoginController {
 		System.out.println("멤버븨 -"+vo);
 
 		System.out.println(memberDAO.getMember(vo));
-		if(memberDAO.getMember(vo) != null) return "index.do";
+		if(memberDAO.getMember(vo) != null) return "redirect:/index.do";
 		else return "login";
 	}
 	

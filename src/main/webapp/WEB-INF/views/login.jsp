@@ -16,7 +16,7 @@
 <table border="1" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>아이디</td>
-		<td><input type="text" name="id" value=""/></td>
+		<td><input type="text" name="memberid" value=""/></td>
 		
 	
 	</tr>

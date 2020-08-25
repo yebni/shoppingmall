@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class MemberDAO {
-	public static final String sql = "select * from members where id=?";
+	public static final String sql = "select * from member where (id=? and pw=?)";
 
 
 	public MemberVO getMember(MemberVO vo) {
@@ -26,10 +26,13 @@ public class MemberDAO {
 			PreparedStatement pt = con.prepareStatement(sql);
 
 			pt.setString(1, vo.getMemberid());
+			pt.setString(2, vo.getPassword());
+
 			ResultSet rs = pt.executeQuery();
 			
 
 			while(rs.next()) {
+				
 				member = new MemberVO();
 				member.setMemberid(rs.getString("ID"));
 				member.setPassword(rs.getString("PW"));
