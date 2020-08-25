@@ -25,8 +25,6 @@ public class LoginController {
 	@RequestMapping(value="/login.do", method=RequestMethod.POST)
 	public String login(MemberVO vo, MemberDAO memberDAO) {
 	
-		System.out.println("멤버다오 - "+memberDAO);
-		System.out.println("멤버븨 -"+vo);
 
 		System.out.println(memberDAO.getMember(vo));
 		if(memberDAO.getMember(vo) != null) return "redirect:/index.do";

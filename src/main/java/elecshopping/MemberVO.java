@@ -5,6 +5,7 @@ public class MemberVO {
 	   String password;
 	   String name;
 	   String email;
+	   String phone;
 	   String address;
 	   String gender;
 	public String getMemberid() {
@@ -42,6 +43,12 @@ public class MemberVO {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	   
 	   

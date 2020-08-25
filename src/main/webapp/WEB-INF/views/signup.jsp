@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 	<title>Insert title here</title>
-	<script src="resources/jQuery/jquery-3.4.1.min.js"></script>
+	<script src="resources/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 	<h1>회원가입</h1>
@@ -15,7 +15,7 @@
 			<tbody>
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" id="userId" name="userId" ></td>
+					<td><input type="text" id="memberid" name="memberid" ></td>
 					<td><input type="button" id="check" value="중복체크"></td>
 				</tr>
 				<tr>
@@ -23,11 +23,21 @@
 				</tr>
 				<tr>
 					<td>패스워드</td>
-					<td colspan="2"><input id="passwd" name="passwd" type="password"></td>
+					<td colspan="2"><input id="password" name="password" type="password"></td>
 				</tr>
 				<tr>
 					<td>패스워드 확인</td>
-					<td colspan="2"><input id="passwdCheck" name="passwdCheck" type="password"></td>
+					<td colspan="2"><input id="passwordCheck" name="passwordCheck" type="password"></td>
+				</tr>
+				
+				<tr>
+					<td>이름</td>
+					<td><input type="text" id="name" name="name" ></td>
+				</tr>
+				
+				<tr>
+					<td>전화번호 </td>
+					<td><input type="text" id="phone" name="phone" ></td>
 				</tr>
 				
 				<tr>
@@ -44,19 +54,19 @@
 		var idx = false;
 		
 		$('#signUp').click(function(){
-			if($.trim($('#userId').val()) == ''){
+			if($.trim($('#memberid').val()) == ''){
 				alert("아이디 입력.");
-				$('#userId').focus();
+				$('#memberid').focus();
 				return;
-			}else if($.trim($('#passwd').val()) == ''){
+			}else if($.trim($('#password').val()) == ''){
 				alert("패스워드 입력.");
-				$('#passwd').focus();
+				$('#password').focus();
 				return;
 			}
 			//패스워드 확인
-			else if($('#passwd').val() != $('#passwdCheck').val()){
+			else if($('#password').val() != $('#passwordCheck').val()){
 				alert('패스워드가 다릅니다.');
-				$('#passwd').focus();
+				$('#password').focus();
 				return;
 			}
 			
@@ -73,10 +83,10 @@
 				url: "${pageContext.request.contextPath}/idCheck.do",
 				type: "GET",
 				data:{
-					"userId":$('#userId').val()
+					"memberid":$('#memberid').val()
 				},
 				success: function(data){
-					if(data == 0 && $.trim($('#userId').val()) != '' ){
+					if(data == 0 && $.trim($('#memberid').val()) != '' ){
 						idx=true;
 						$('#userId').attr("readonly",true);
 						var html="<tr><td colspan='3' style='color: green'>사용가능</td></tr>";
