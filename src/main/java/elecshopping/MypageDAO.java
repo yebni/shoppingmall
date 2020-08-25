@@ -52,14 +52,17 @@ public class MypageDAO {
 		
 	}
 
-	public Object editMypage(HttpSession session) {
+	public int editMypage(HttpSession session) {
 		// TODO Auto-generated method stub
-		MypageVO vo  = new MypageVO();
+		int row = 0;
 		String id = (String) session.getAttribute("id");
-		String pw = (String) session.getAttribute("password");
+		String pw = (String) session.getAttribute("pw");
 		String name = (String) session.getAttribute("name");
 		String phone = (String) session.getAttribute("phone");
 		
+		System.out.println("나는 이원"+id);
+		System.out.println("나는 이원"+name);
+		System.out.println("나는 이원"+phone);
 		try { 
 			String sql = "update member set pw=?, name=?, phone=? where id=?";
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -73,7 +76,9 @@ public class MypageDAO {
 			pt.setString(2, name);
 			pt.setString(3, phone);
 			pt.setString(4, id);
-			pt.executeUpdate();
+			row = pt.executeUpdate();
+			
+			System.out.println("으어어어앙아아아ㅏㅇ"+row);
 
 			pt.close();
 			con.close();
@@ -82,7 +87,7 @@ public class MypageDAO {
 		}
 		
 
-		return vo;
+		return row;
 	}
 	
 	

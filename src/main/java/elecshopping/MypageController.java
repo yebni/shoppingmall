@@ -37,8 +37,11 @@ public class MypageController {
 	}
 	
 	@RequestMapping("/infoEdit.do")
-	public String infoEdit(HttpSession session) {
-		if(dao.editMypage(session) != null) return "redirect:/mypage";
+	public String infoEdit(HttpSession session, MemberVO vo) {
+		session.setAttribute("pw", vo.getPassword());
+		session.setAttribute("name", vo.getName());
+		session.setAttribute("phone", vo.getPhone());
+		if(dao.editMypage(session) > 0) return "redirect:/mypage";
 		else return "/mypageedit";	
 		}
 	
