@@ -37,14 +37,10 @@ public class MypageController {
 	}
 	
 	@RequestMapping("/infoEdit.do")
-	public ModelAndView infoEdit(HttpSession session) {
-		MypageVO myinfo = dao.getInfo(session);
-
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("myinfo", myinfo);
-		mv.setViewName("mypageedit");
-		return mv;
-	}
+	public String infoEdit(HttpSession session) {
+		if(dao.editMypage(session) != null) return "redirect:/mypage";
+		else return "/mypageedit";	
+		}
 	
 
 }

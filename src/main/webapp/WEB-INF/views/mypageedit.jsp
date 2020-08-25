@@ -10,13 +10,11 @@
 <body>
 	<h1>회원정보 수정 </h1>
 	<hr>
-	<form id="signFrm" name="signFrm" action=infoEdit.do">
+	<form id="signFrm" name="signFrm" action="infoEdit.do">
 		<table>
 			<tbody>
 				<tr>
-					<td>아이디</td>
-					<td><input type="text" id="memberid" name="memberid" value="${myinfo.id }"></td>
-					<td><input type="button" id="check" value="중복체크"></td>
+					<td>아이디 ${myinfo.id }</td>
 				</tr>
 				<tr>
 					<td colspan=3 id="idCheck"></td>
@@ -41,7 +39,7 @@
 				</tr>
 				
 				<tr>
-					<td colspan="3"><input type="button" id="signUp" value="회원가입"></td>
+					<td colspan="3"><input type="button" id="signUp" value="수정하기"></td>
 				</tr>
 			</tbody>
 		</table>
@@ -54,11 +52,7 @@
 		var idx = false;
 		
 		$('#signUp').click(function(){
-			if($.trim($('#memberid').val()) == ''){
-				alert("아이디 입력.");
-				$('#memberid').focus();
-				return;
-			}else if($.trim($('#password').val()) == ''){
+			if($.trim($('#password').val()) == ''){
 				alert("패스워드 입력.");
 				$('#password').focus();
 				return;
@@ -70,12 +64,8 @@
 				return;
 			}
 			
-			if(idx==false){
-				alert("아이디 중복체크를 해주세요.");
-				return;
-			}else{
-				$('#signFrm').submit();
-			}
+			$('#signFrm').submit();
+			
 		});
 		
 		$('#check').click(function(){
@@ -83,8 +73,10 @@
 				url: "${pageContext.request.contextPath}/idCheck.do",
 				type: "GET",
 				data:{
-					"memberid":$('#memberid').val()
-				},
+					"password":$('#password').val(),
+					"name":$('#name').val(),
+					"phone":$('#phone').val()
+					},
 				success: function(data){
 					if(data == 0 && $.trim($('#memberid').val()) != '' ){
 						idx=true;
