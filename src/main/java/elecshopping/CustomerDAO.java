@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
 
-@Component("dao")
+@Component("customerdao")
 public class CustomerDAO {
 
 	ArrayList<CustomerVO> getCustomerList(){
