@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -25,24 +26,25 @@ public class MemberDAO {
 			ResultSet rs = pt.executeQuery();
 			
 			while(rs.next()) {
+
 				member = new MemberVO();
 				member.setMemberid(rs.getString("ID"));
 				member.setPassword(rs.getString("PW"));
 				member.setName(rs.getString("NAME"));
+
 			}
 			pt.close();
 			con.close();
-			
-		} catch (Exception e) {
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
 		return member;
-	} // getMember end
+		
+	}
 	
 	public MemberVO addMember(MemberVO vo) {
 		MemberVO member = null;
-		String sql = "insert into customer (id, pw, name, phone, admin) values(?, ?, ?, ?, ?)";
+		String sql = "insert into member (id, pw, name, phone, admin) values(?, ?, ?, ?, ?)";
 
 		try { 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -56,6 +58,7 @@ public class MemberDAO {
 			pt.setString(4, vo.getPhone());
 			pt.setInt(5, 0);
 
+
 			ResultSet rs = pt.executeQuery();
 			
 			while(rs.next()) {
@@ -71,13 +74,13 @@ public class MemberDAO {
 		}
 		return member;
 		
-	} // addMember end
-	
+  }
 	public String idCheck(String memberid) {
 		MemberVO member = null;
 
 		
 		String sql = "select * from customer where id=?";
+
 
 		try { 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -87,9 +90,11 @@ public class MemberDAO {
 
 			pt.setString(1, memberid);
 
+
 			ResultSet rs = pt.executeQuery();
 			
 			while(rs.next()) {
+
 				member = new MemberVO();
 				member.setMemberid(rs.getString("ID"));
 			}
@@ -98,11 +103,13 @@ public class MemberDAO {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("체");
-		System.out.println(member);
+
 		if(member != null)
 			return "1";
 		else
 			return "0";
-	} // idCheck end
+
+	}
+	
 }
+

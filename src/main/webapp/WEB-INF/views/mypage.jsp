@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport"
 	content="width=device-width, initial-sacle=1, shrink-to-fit=no">
 <meta name="description" content="">
@@ -41,6 +42,7 @@
 			</div>
 		</div>
 	</nav>
+
 <div>
 	<h1>내 정보</h1>
 	<table>
@@ -68,6 +70,7 @@
 	
 	
 </div>
+
 	<!-- Footer -->
 	<footer class="py-5 bg-dark">
 		<div class="container">
@@ -80,5 +83,6 @@
 	<script src="/shop/resources/vendor/jquery/jquery.min.js"></script>
 	<script
 		src="/shop/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
